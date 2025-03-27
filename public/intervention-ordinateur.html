@@ -7,6 +7,13 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+<style>
+  .client-logo {
+    max-width: 150px;
+    height: auto;
+    margin-right: 1rem;
+  }
+</style>
 <body class="bg-gray-100">
   <header class="bg-blue-500 text-white p-4 flex justify-between items-center">
     <a href="index.html" class="text-2xl">Inventaire Parc Informatique</a>
@@ -24,7 +31,7 @@
   </header>
   <main class="container mx-auto p-4">
     <div class="flex items-center justify-center mb-4">
-      <img src="https://via.placeholder.com/100" alt="Logo du Client" class="client-logo">
+      <img src="../11.png" alt="Logo du Client" class="client-logo">
       <h2 class="text-xl font-bold">Intervention Ordinateur</h2>
     </div>
     <form class="bg-white p-8 rounded-lg shadow-md">
@@ -33,67 +40,47 @@
         <input type="text" id="field1" class="mt-1 block w-full p-2 border border-gray-300 rounded">
       </div>
       <div class="mb-4">
-        <label for="field2" class="block text-gray-700">Champ 2</label>
+        <label for="field2" class="block text-gray-700">Nom du client</label>
         <input type="text" id="field2" class="mt-1 block w-full p-2 border border-gray-300 rounded">
       </div>
       <div class="mb-4">
-        <label for="field3" class="block text-gray-700">Champ 3</label>
+        <label for="field1" class="block text-gray-700">Type d'intervention</label>
+        <div class="flex items-center space-x-4 mt-1 block w-full p-2 border border-gray-300 rounded">
+          <label class="flex items-center">
+            <input type="radio" name="option" value="option1" class="mr-2">
+            Laptop/UC
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="option" value="option2" class="mr-2">
+            Imprimante
+          </label>
+        </div>
+      </div>
+      <div class="mb-4">
+        <label for="field3" class="block text-gray-700">Modèle de l'équipement</label>
         <input type="text" id="field3" class="mt-1 block w-full p-2 border border-gray-300 rounded">
       </div>
       <div class="mb-4">
-        <label for="field4" class="block text-gray-700">Champ 4</label>
+        <label for="field3" class="block text-gray-700">Numéro de Série</label>
+        <input type="text" id="field3" class="mt-1 block w-full p-2 border border-gray-300 rounded">
+      </div>
+      <div class="mb-4">
+        <label for="field4" class="block text-gray-700">Numéro de Produit</label>
         <input type="text" id="field4" class="mt-1 block w-full p-2 border border-gray-300 rounded">
       </div>
       <div class="mb-4">
-        <label for="field5" class="block text-gray-700">Champ 5</label>
-        <input type="text" id="field5" class="mt-1 block w-full p-2 border border-gray-300 rounded">
+        <label for="select15" class="block text-gray-700">Niveau de difficulté</label>
+        <select id="select15" class="mt-1 block w-full p-2 border border-gray-300 rounded">
+          <option value="option1">Basique</option>
+          <option value="option2">Meduim</option>
+          <option value="option3">Hard</option>
+        </select>
       </div>
       <div class="mb-4">
-        <label for="field6" class="block text-gray-700">Champ 6</label>
+        <label for="field6" class="block text-gray-700">Site</label>
         <input type="text" id="field6" class="mt-1 block w-full p-2 border border-gray-300 rounded">
       </div>
-      <div class="mb-4">
-        <label for="select1" class="block text-gray-700">Sélecteur 1</label>
-        <select id="select1" class="mt-1 block w-full p-2 border border-gray-300 rounded">
-          <option value="option1">Option 1</option>
-          <option value="option2">Option 2</option>
-        </select>
-      </div>
-      <div class="mb-4">
-        <label for="select2" class="block text-gray-700">Sélecteur 2</label>
-        <select id="select2" class="mt-1 block w-full p-2 border border-gray-300 rounded">
-          <option value="option1">Option 1</option>
-          <option value="option2">Option 2</option>
-        </select>
-      </div>
-      <div class="mb-4">
-        <label for="select3" class="block text-gray-700">Sélecteur 3</label>
-        <select id="select3" class="mt-1 block w-full p-2 border border-gray-300 rounded">
-          <option value="option1">Option 1</option>
-          <option value="option2">Option 2</option>
-        </select>
-      </div>
-      <div class="mb-4">
-        <label for="select-oui-non1" class="block text-gray-700">Oui/Non 1</label>
-        <select id="select-oui-non1" class="mt-1 block w-full p-2 border border-gray-300 rounded">
-          <option value="oui">Oui</option>
-          <option value="non">Non</option>
-        </select>
-      </div>
-      <div class="mb-4">
-        <label for="select-oui-non2" class="block text-gray-700">Oui/Non 2</label>
-        <select id="select-oui-non2" class="mt-1 block w-full p-2 border border-gray-300 rounded">
-          <option value="oui">Oui</option>
-          <option value="non">Non</option>
-        </select>
-      </div>
-      <div class="mb-4">
-        <label for="select-oui-non3" class="block text-gray-700">Oui/Non 3</label>
-        <select id="select-oui-non3" class="mt-1 block w-full p-2 border border-gray-300 rounded">
-          <option value="oui">Oui</option>
-          <option value="non">Non</option>
-        </select>
-      </div>
+      
       <div class="mb-4">
         <label for="description" class="block text-gray-700">Description de l'incident</label>
         <input type="text" id="description" class="mt-1 block w-full p-2 border border-gray-300 rounded">

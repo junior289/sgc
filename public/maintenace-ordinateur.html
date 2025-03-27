@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maintenance Ordinateur</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .client-logo {
+      max-width: 150px;
+      height: auto;
+      margin-right: 1rem;
+    }
+  </style>
 </head>
+
 <body class="bg-gray-100">
   <header class="bg-blue-500 text-white p-4 flex justify-between items-center">
     <a href="index.html" class="text-2xl">Inventaire Parc Informatique</a>
@@ -24,76 +33,173 @@
   </header>
   <main class="container mx-auto p-4">
     <div class="flex items-center justify-center mb-4">
-      <img src="https://via.placeholder.com/100" alt="Logo du Client" class="client-logo">
+      <img src="../11.png" alt="Logo du Client" class="client-logo">
       <h2 class="text-xl font-bold">Maintenance Ordinateur</h2>
     </div>
     <form class="bg-white p-8 rounded-lg shadow-md">
+
       <div class="mb-4">
-        <label for="field1" class="block text-gray-700">Champ 1</label>
+        <label for="field1" class="block text-gray-700">Type de maintenance</label>
+        <div class="flex items-center space-x-4 mt-1 block w-full p-2 border border-gray-300 rounded">
+          <label class="flex items-center">
+            <input type="radio" name="option" value="option1" class="mr-2">
+            Préventive
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="option" value="option2" class="mr-2">
+            Curative
+          </label>
+        </div>
+      </div>
+      <div class="mb-4">
+        <label for="field1" class="block text-gray-700">Type d'objet</label>
+        <div class="flex items-center space-x-4 mt-1 block w-full p-2 border border-gray-300 rounded">
+          <label class="flex items-center">
+            <input type="radio" name="option" value="option3" class="mr-2">
+            Unité Centrale
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="option" value="option4" class="mr-2">
+            Laptop
+          </label>
+        </div>
+      </div>
+      <div class="mb-4">
+        <label for="field1" class="block text-gray-700">Hostname</label>
         <input type="text" id="field1" class="mt-1 block w-full p-2 border border-gray-300 rounded">
       </div>
       <div class="mb-4">
-        <label for="field2" class="block text-gray-700">Champ 2</label>
+        <label for="field2" class="block text-gray-700">Modèle de l'équipement</label>
         <input type="text" id="field2" class="mt-1 block w-full p-2 border border-gray-300 rounded">
       </div>
       <div class="mb-4">
-        <label for="field3" class="block text-gray-700">Champ 3</label>
+        <label for="field3" class="block text-gray-700">Numéro de Série</label>
         <input type="text" id="field3" class="mt-1 block w-full p-2 border border-gray-300 rounded">
       </div>
       <div class="mb-4">
-        <label for="field4" class="block text-gray-700">Champ 4</label>
+        <label for="field4" class="block text-gray-700">Numéro de produit</label>
         <input type="text" id="field4" class="mt-1 block w-full p-2 border border-gray-300 rounded">
       </div>
       <div class="mb-4">
-        <label for="field5" class="block text-gray-700">Champ 5</label>
-        <input type="text" id="field5" class="mt-1 block w-full p-2 border border-gray-300 rounded">
+        <label for="select258" class="block text-gray-700">CPU</label>
+        <select id="select258" class="mt-1 block w-full p-2 border border-gray-300 rounded">
+          <option value="option1">Intel Core I3</option>
+          <option value="option2">Intel Core I5</option>
+          <option value="option3">Intel Core I7</option>
+          <option value="option4">Intel Core I9</option>
+        </select>
+      </div>
+      
+      <div class="mb-4">
+        <label for="select25" class="block text-gray-700">Disque</label>
+        <select id="select25" class="mt-1 block w-full p-2 border border-gray-300 rounded">
+          <option value="option3">256 Go</option>
+          <option value="option1">500 Go</option>
+          <option value="option2">1 To</option>
+        </select>
       </div>
       <div class="mb-4">
-        <label for="field6" class="block text-gray-700">Champ 6</label>
+        <label for="select25" class="block text-gray-700">RAM</label>
+        <select id="select25" class="mt-1 block w-full p-2 border border-gray-300 rounded">
+          <option value="option1">4 Go</option>
+          <option value="option2">8 Go</option>
+          <option value="option3">12 Go</option>
+          <option value="option4">16 Go</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label for="field6" class="block text-gray-700">@ IP</label>
         <input type="text" id="field6" class="mt-1 block w-full p-2 border border-gray-300 rounded">
       </div>
       <div class="mb-4">
-        <label for="select1" class="block text-gray-700">Sélecteur 1</label>
-        <select id="select1" class="mt-1 block w-full p-2 border border-gray-300 rounded">
-          <option value="option1">Option 1</option>
-          <option value="option2">Option 2</option>
+        <label for="field6" class="block text-gray-700">@ Mac</label>
+        <input type="text" id="field6" class="mt-1 block w-full p-2 border border-gray-300 rounded">
+      </div>
+      <div class="mb-4">
+        <label for="select21" class="block text-gray-700">Système</label>
+        <select id="select21" class="mt-1 block w-full p-2 border border-gray-300 rounded">
+          <option value="option1">Win 7</option>
+          <option value="option2">WIn 8</option>
+          <option value="option3">Win 10</option>
+          <option value="option4">Win 11</option>
         </select>
       </div>
       <div class="mb-4">
-        <label for="select2" class="block text-gray-700">Sélecteur 2</label>
-        <select id="select2" class="mt-1 block w-full p-2 border border-gray-300 rounded">
-          <option value="option1">Option 1</option>
-          <option value="option2">Option 2</option>
-        </select>
+        <label for="field6" class="block text-gray-700">Version</label>
+        <input type="text" id="field6" class="mt-1 block w-full p-2 border border-gray-300 rounded">
       </div>
       <div class="mb-4">
-        <label for="select3" class="block text-gray-700">Sélecteur 3</label>
-        <select id="select3" class="mt-1 block w-full p-2 border border-gray-300 rounded">
-          <option value="option1">Option 1</option>
-          <option value="option2">Option 2</option>
-        </select>
+        <label for="field6" class="block text-gray-700">Agence</label>
+        <input type="text" id="field6" class="mt-1 block w-full p-2 border border-gray-300 rounded">
       </div>
       <div class="mb-4">
-        <label for="select-oui-non1" class="block text-gray-700">Oui/Non 1</label>
-        <select id="select-oui-non1" class="mt-1 block w-full p-2 border border-gray-300 rounded">
-          <option value="oui">Oui</option>
-          <option value="non">Non</option>
-        </select>
+        <label for="field6" class="block text-gray-700">Création du point de restauration</label>
+        <input type="text" id="field6" class="mt-1 block w-full p-2 border border-gray-300 rounded">
+      </div>
+
+
+      
+      
+      <div class="mb-4">
+        <div class="flex justify-between space-x-4 mt-1 block w-full p-2 border border-gray-300 rounded">
+          <label class="flex">
+            Vérification de l'intégrition du poste dans le Domaine
+          </label>
+          <input type="radio" name="option" value="option3" class="mr-2">
+          
+        </div>
+      </div>
+      
+      <div class="mb-4">
+        <div class="flex justify-between space-x-4 mt-1 block w-full p-2 border border-gray-300 rounded">
+          <label class="flex">
+            Vérification du statut de l'antivirus
+          </label>
+          <input type="radio" name="optiondd" value="option3" class="mr-2">
+        </div>
       </div>
       <div class="mb-4">
-        <label for="select-oui-non2" class="block text-gray-700">Oui/Non 2</label>
-        <select id="select-oui-non2" class="mt-1 block w-full p-2 border border-gray-300 rounded">
-          <option value="oui">Oui</option>
-          <option value="non">Non</option>
-        </select>
+        <div class="flex justify-between space-x-4 mt-1 block w-full p-2 border border-gray-300 rounded">
+          <label class="flex">
+            Vérification du statut de l'OS, des espaces disques disponibles et de la licence
+          </label>
+          <input type="radio" name="optiondc" value="option3" class="mr-2">
+        </div>
       </div>
       <div class="mb-4">
-        <label for="select-oui-non3" class="block text-gray-700">Oui/Non 3</label>
-        <select id="select-oui-non3" class="mt-1 block w-full p-2 border border-gray-300 rounded">
-          <option value="oui">Oui</option>
-          <option value="non">Non</option>
-        </select>
+        <div class="flex justify-between space-x-4 mt-1 block w-full p-2 border border-gray-300 rounded">
+          <label class="flex">
+            Vérification des taux d'utilisation des processeurs et memoires, vidage des fichiers temporaires
+          </label>
+          <input type="radio" name="optiondx" value="option3" class="mr-2">
+        </div>
       </div>
+      <div class="mb-4">
+        <div class="flex justify-between space-x-4 mt-1 block w-full p-2 border border-gray-300 rounded">
+          <label class="flex">
+            Nettoyage et dépoussiérage
+          </label>
+          <input type="radio" name="optiondee" value="option3" class="mr-2">
+        </div>
+      </div>
+      <div class="mb-4">
+        <div class="flex justify-between space-x-4 mt-1 block w-full p-2 border border-gray-300 rounded">
+          <label class="flex">
+            Vérification des connectiques
+          </label>
+          <input type="radio" name="optiondgt" value="option3" class="mr-2">
+        </div>
+      </div>
+      <div class="mb-4">
+        <div class="flex justify-between space-x-4 mt-1 block w-full p-2 border border-gray-300 rounded">
+          <label class="flex">
+            Inventaire matériel
+          </label>
+          <input type="radio" name="optiondi" value="option3" class="mr-2">
+        </div>
+      </div>
+
+
       <div class="mb-4">
         <label for="comments" class="block text-gray-700">Commentaires</label>
         <textarea id="comments" rows="4" class="mt-1 block w-full p-2 border border-gray-300 rounded"></textarea>
@@ -108,4 +214,5 @@
   </footer>
   <script src="script.js"></script>
 </body>
+
 </html>
