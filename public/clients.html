@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clients</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .client-img {
+      width: 35%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .card-link {
+      display: block;
+      text-decoration: none;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 250px;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <header class="bg-blue-500 text-white p-4 flex justify-between items-center">
+    <a href="index.html" class="text-2xl">Inventaire Parc Informatique</a>
+    <div class="flex space-x-4">
+      <a href="profile.html" class="text-white hover:text-gray-300">
+        <i class="fas fa-user"></i>
+      </a>
+      <a href="settings.html" class="text-white hover:text-gray-300">
+        <i class="fas fa-cog"></i>
+      </a>
+      <a href="logout.html" class="text-white hover:text-gray-300">
+        <i class="fas fa-sign-out-alt"></i>
+      </a>
+    </div>
+  </header>
+  <main class="container mx-auto p-4">
+    <h2 class="text-xl font-bold mb-4">Nos Clients</h2>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <a href="client1.html" class="card-link">
+        <div class="bg-white p-4 rounded-lg shadow-md card text-center">
+          <img src="../11.png" alt="Client 1" class="client-img">
+          <p class="mt-2">Client 1</p>
+        </div>
+      </a>
+      <a href="client2.html" class="card-link">
+        <div class="bg-white p-4 rounded-lg shadow-md card text-center">
+          <img src="../12.png" alt="Client 2" class="client-img">
+          <p class="mt-2">Client 2</p>
+        </div>
+      </a>
+      <a href="client3.html" class="card-link">
+        <div class="bg-white p-4 rounded-lg shadow-md card text-center">
+          <img src="../13.png" alt="Client 3" class="client-img">
+          <p class="mt-2">Client 3</p>
+        </div>
+      </a>
+      <a href="client4.html" class="card-link">
+        <div class="bg-white p-4 rounded-lg shadow-md card text-center">
+          <img src="https://via.placeholder.com/150" alt="Client 4" class="client-img">
+          <p class="mt-2">Client 4</p>
+        </div>
+      </a>
+      <a href="client5.html" class="card-link">
+        <div class="bg-white p-4 rounded-lg shadow-md card text-center">
+          <img src="https://via.placeholder.com/150" alt="Client 5" class="client-img">
+          <p class="mt-2">Client 5</p>
+        </div>
+      </a>
+    </div>
+  </main>
+  <footer class="bg-gray-800 text-white p-4 mt-6 text-center">
+    &copy; 2024 Inventaire Parc Informatique
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

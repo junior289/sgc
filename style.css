@@ -1,0 +1,29 @@
+@import "https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css";
+
+body {
+  @apply bg-gray-100 flex items-center justify-center min-h-screen;
+}
+
+.container {
+  @apply flex items-center justify-center min-h-screen;
+}
+
+.login-box {
+  @apply bg-white p-8 rounded-lg shadow-md w-full max-w-md;
+}
+
+.textbox {
+  @apply mb-4;
+}
+
+label {
+  @apply block text-gray-700;
+}
+
+input {
+  @apply w-full p-2 border border-gray-300 rounded mt-1;
+}
+
+.btn {
+  @apply w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600;
+}

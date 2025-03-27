@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajouter un événement</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+  <main class="container mx-auto p-4">
+    <h2 class="text-xl font-bold mb-4">Ajouter un événement</h2>
+    <form action="add_event.php" method="POST" class="bg-white p-8 rounded-lg shadow-md">
+      <div class="mb-4">
+        <label for="title" class="block text-gray-700">Titre</label>
+        <input type="text" id="title" name="title" class="mt-1 block w-full p-2 border border-gray-300 rounded">
+      </div>
+      <div class="mb-4">
+        <label for="start" class="block text-gray-700">Date de début</label>
+        <input type="date" id="start" name="start" class="mt-1 block w-full p-2 border border-gray-300 rounded">
+      </div>
+      <div class="mb-4">
+        <label for="description" class="block text-gray-700">Description</label>
+        <textarea id="description" name="description" class="mt-1 block w-full p-2 border border-gray-300 rounded"></textarea>
+      </div>
+      <div class="text-right">
+        <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Ajouter</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>
+
+
+
+
+<!-- cote php
+
+CREATE TABLE events (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  start DATE NOT NULL,
+  description TEXT
+);
+
+
+page ajouter 'traitement'
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "database_name";
+
+// Créer une connexion
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Vérifier la connexion
+if ($conn->connect_error) {
+    die("Connexion échouée : " . $conn->connect_error);
+}
+
+// Préparer et lier
+$stmt = $conn->prepare("INSERT INTO events (title, start, description) VALUES (?, ?, ?)");
+$stmt->bind_param("sss", $title, $start, $description);
+
+// Définir les paramètres et exécuter
+$title = $_POST['title'];
+$start = $_POST['start'];
+$description = $_POST['description'];
+$stmt->execute();
+
+echo "Nouvel événement ajouté avec succès";
+
+$stmt->close();
+$conn->close();
+?>
+
+
+
+page 'events' pour l'affichage et le chargement des valeurs
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "database_name";
+
+// Créer une connexion
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Vérifier la connexion
+if ($conn->connect_error) {
+    die("Connexion échouée : " . $conn->connect_error);
+}
+
+$sql = "SELECT id, title, start, description FROM events";
+$result = $conn->query($sql);
+
+$events = array();
+while($row = $result->fetch_assoc()) {
+    $event = array(
+        'title' => $row['title'],
+        'start' => $row['start'],
+        'description' => $row['description']
+    );
+    array_push($events, $event);
+}
+
+echo json_encode($events);
+
+$conn->close();
+?>
+
+
+
+
+lors de l'affichage sur le html avec le javascript
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      events: 'events.php',  // Charger les événements depuis le script PHP
+      eventClick: function(info) {
+        var eventDetails = document.getElementById('event-details');
+        var eventInfo = document.getElementById('event-info');
+        eventDetails.style.display = 'block';
+        eventInfo.innerHTML = 'Titre: ' + info.event.title + '<br>Date: ' + info.event.start.toDateString() + '<br>Description: ' + info.event.extendedProps.description;
+      }
+    });
+    calendar.render();
+  });
+</script>
+ -->
+
